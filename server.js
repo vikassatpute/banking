@@ -13,7 +13,8 @@ mongoose.connection.on('error', function(){
 var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://vargani:vargani#$#69@ds015636.mlab.com:15636/heroku_4mwp0w3r';
+    'mongodb://heroku_4mwp0w3r:nmmdcve1kgino1veqr1ckluneu@ds015636.mlab.com:15636/heroku_4mwp0w3r';
+    //'mongodb://vargani:vargani#$#69@ds015636.mlab.com:15636/heroku_4mwp0w3r';
 mongoose.connect(uristring, function (err, res) {
     if (err) {
         console.log ('ERROR connecting to: ' + uristring + '. ' + err);
