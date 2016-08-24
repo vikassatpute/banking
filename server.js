@@ -6,9 +6,20 @@ var bodyParser = require('body-parser');
 
 // MongoDB
 
-mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/products-demo');
+/*mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/products-demo');
 mongoose.connection.on('error', function(){
     console.log('not connected');
+});*/
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/products-demo';
+mongoose.connect(uristring, function (err, res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + uristring);
+    }
 });
 
 // Express
@@ -28,3 +39,5 @@ var port = process.env.OPENSHIFT_NODEJS_PORT || 5000
 app.listen(port, ip, function() {
   console.log('Express server listening on %d', port);
 });
+
+
