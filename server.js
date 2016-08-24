@@ -34,8 +34,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', require('./routes/api'));
 
 // Start server
-var port = process.env.OPENSHIFT_NODEJS_PORT || 5000
-, ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.PORT || 5000
+, ip = process.env.IP || "127.0.0.1";
 app.listen(port, ip, function() {
   console.log('Express server listening on %d', port);
   console.log('Express server listening on %d', ip);
