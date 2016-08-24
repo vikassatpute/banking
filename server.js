@@ -13,7 +13,7 @@ mongoose.connection.on('error', function(){
 var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://<dbuser>:<dbpassword>@ds015636.mlab.com:15636/heroku_4mwp0w3r';
+    'mongodb://varganiapp:vargani@$#2@ds015636.mlab.com:15636/heroku_4mwp0w3r';
 mongoose.connect(uristring, function (err, res) {
     if (err) {
         console.log ('ERROR connecting to: ' + uristring + '. ' + err);
