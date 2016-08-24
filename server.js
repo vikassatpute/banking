@@ -35,10 +35,10 @@ app.use('/api', require('./routes/api'));
 
 // Start server
 var port = process.env.PORT || 5000
-, ip = process.env.IP || "127.0.0.1";
-app.listen(port, ip, function() {
+, host = process.env.YOUR_HOST || "127.0.0.1";
+app.listen(port, host, function() {
   console.log('Express server listening on %d', port);
-  console.log('Express server listening on %d', ip);
+  console.log('Express server listening on %d', host);
 });
 
 
