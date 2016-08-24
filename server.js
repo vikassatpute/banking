@@ -36,9 +36,9 @@ app.use('/api', require('./routes/api'));
 // Start server
 var port = process.env.PORT || 5000
 , host = process.env.YOUR_HOST || "127.0.0.1";
-app.listen(port, host, function() {
+app.listen(port, function() {
   console.log('Express server listening on port:', port);
-  console.log('Express server listening on host:', host);
+  // console.log('Express server listening on host:', host);
 });
 
 
